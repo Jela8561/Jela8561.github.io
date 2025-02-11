@@ -1,0 +1,46 @@
+/* COLORS */
+:root {
+    --bg-color-default: #50a2a7;
+    --bg-color-dark: #1c110a;
+    --yellow: #e9b44c;
+    --cream: #f2f7f2;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    overflow: clip;
+    background-color: var(--bg-color-default);
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    align-content: center;
+}
+
+.container h1 {
+    opacity: 0;
+    color: var(--yellow);
+}
+
+.container svg path.switch {
+    transform-origin: center;
+}
+
+.container svg.switch-off path.switch {
+    transform: rotateX(180deg);
+    fill: var(--cream);
+}
+
+.lightsoff {
+    background-color: var(--bg-color-dark);
+}
+
+.lightsoff .container h1 {
+    opacity: 1;
+}
