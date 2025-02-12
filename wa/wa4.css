@@ -69,6 +69,7 @@ body {
   }
 
   .card article p {
+  font-size: larger;
   padding: 1em;
   color: aliceblue;
   }
@@ -125,6 +126,7 @@ body {
     font-size: 2em;
     height: 3em;
     margin: 0;
+    font-family: "Garamond";
   }
 
   .card2 footer p {
@@ -134,6 +136,7 @@ body {
   }
 
   .card2 article p {
+  font-family: "Verdana";
   margin: 1em;
   padding-top: 1em;
   color: yellow;
