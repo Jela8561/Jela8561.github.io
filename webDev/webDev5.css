@@ -1,0 +1,197 @@
+body {
+    background: #D1E3FF;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+  }
+  
+  .sign {
+    font: 800 32px/1 "Nunito", serif;
+    color: #A22E57;
+    text-transform: uppercase;
+    background: #FFF;
+    padding: 15px 25px;
+    border-radius: 50px;
+  }
+  
+  .sun {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: grid;
+    place-items: center;
+  }
+  
+  .sun::before,
+  .sun::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .sun::before {
+    width: 180px;
+    height: 180px;
+    background: #FDDF47;
+    z-index: 1;
+  }
+  
+  .sun::after {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to bottom, #FDDF47 0%, #FEFA5D 100%);
+    z-index: 2;
+  }
+  
+  .sun__petal {
+    width: 90px;
+    height: 200px;
+    background: #FDDF47;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 10px 0 -4px #A42B56, 0 -10px 0 -4px #A42B56;
+  }
+  
+  .sun__petal::before,
+  .sun__petal::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    box-shadow: inherit;
+    position: absolute;
+  }
+  
+  .sun__petal::before { transform: rotate(30deg); }
+  .sun__petal::after { transform: rotate(60deg); }
+  .sun__petal--left { transform: rotate(-90deg); }
+  
+  .sun__face {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 3;
+  }
+  
+  .sun__face::before,
+  .sun__face::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: #A42B56;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    box-shadow: 15px 5px 0 5px #FFA7AA;
+  }
+  
+  .sun__face::before {
+    left: 10px;
+    box-shadow: -15px 5px 0 5px #FFA7AA;
+  }
+  
+  .sun__face::after {
+    right: 10px;
+  }
+  
+  .sun__nose {
+    width: 12px;
+    height: 5px;
+    border: 5px solid #A42B56;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+
+    
+  }
+  
+  .sun__nose::before,
+  .sun__nose::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #A42B56;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+  }
+  
+  .sun__nose::before { left: -5px; }
+  .sun__nose::after { right: -5px; }
+  
+  .sun__heart {
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 110px;
+    z-index: 4;
+  }
+  
+  .sun__heart::before,
+  .sun__heart::after {
+    content: '';
+    width: 20px;
+    height: 30px;
+    background: #FF757D;
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+  }
+  
+  .sun__heart::before {
+    left: -22px;
+    transform: rotate(-45deg);
+  }
+  
+  .sun__heart::after {
+    left: -15px;
+    transform: rotate(45deg);
+  }
+  
+  .stars {
+    height: 45px;
+    width: 15px;
+    position: absolute;
+    top: 50%;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(12deg);
+    box-shadow:
+      -250px -180px 2px #FFF,
+      -70px 210px 2px #FFF,
+      180px -160px 2px #FFF,
+      100px -210px 2px -6px #FFF,
+      -90px -210px 2px -6px #FFF,
+      100px 170px 2px -6px #FFF,
+      -180px 100px 2px -6px #FFF;
+  }
+  
+  .stars::before {
+    content: '';
+    height: 45px;
+    width: 15px;
+    position: absolute;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(90deg);
+    box-shadow:
+      -180px 250px 2px #FFF,
+      210px 70px 2px #FFF,
+      -160px -180px 2px #FFF,
+      -210px -100px 2px -6px #FFF,
+      -210px 90px 2px -6px #FFF,
+      170px -100px 2px -6px #FFF,
+      100px 180px 2px -6px #FFF;
+  }
+  

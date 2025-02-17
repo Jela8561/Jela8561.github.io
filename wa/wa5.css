@@ -1,0 +1,60 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: -1; 
+}
+
+
+.scoreboard {
+    position: absolute;
+    bottom: -9%;
+    left: 50%;
+    width: 35%;
+    height: 55%;
+    transform: translateX(-50%);
+}
+
+
+.niners {
+    position: absolute;
+    bottom: 13%;
+    left: 39%;
+    width: 100px; 
+}
+
+
+.cowboys {
+    position: absolute;
+    bottom: 13%;
+    right: 41%;
+    width: 65px; 
+}
+
+p {
+    position: absolute;
+    bottom: 14%;
+    left: 35%;
+    font-family: monospace;
+    font-size: 400%;
+    font-weight: bold;
+    color: beige;
+    word-spacing: 355px;
+}
