@@ -59,7 +59,8 @@ nav a {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 2fr 2fr; 
+    gap: 1px;
     width: 350px;
    
 }
