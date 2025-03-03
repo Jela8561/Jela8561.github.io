@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1E2E; 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+    color: #FFB400; 
+}
+
+nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #4A148C; 
+    transition: background-color 0.5s ease; 
+}
+
+nav:hover {
+    background-color: #6A1B9A; 
+}
+
+nav a {
+    width: 10vw;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+img {
+    width: 30vw;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 180, 0, 0.8);
+}
+
+
+#animated-ball {
+    background-color: #FF4081; /* Pink ball */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10vw;
+    top: 50px;
+    animation: moveSideways 2s infinite;
+}
+
+@keyframes moveSideways {
+    0% { left: 0; }
+    50% { left: 100vw; } 
+    100% {left: 0;} 
+}
