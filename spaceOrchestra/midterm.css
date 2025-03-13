@@ -1,0 +1,98 @@
+/* Fonts */
+h1 {
+    text-align: center;
+    color: darkviolet;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif; /* Apply to entire page */
+    background-color: #0a0a0a; /* Dark background for contrast */
+    color: white; /* White text for readability */
+}
+
+/* Styles for the scrolling container */
+.concerts-container {
+    display: flex; /* Allows horizontal layout */
+    gap: 20px; /* Spacing between concert cards */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Smooth scrolling effect */
+    padding: 20px;
+    white-space: nowrap; /* Prevents items from wrapping */
+}
+
+/* Hide scrollbar for Chrome, Safari */
+.concerts-container::-webkit-scrollbar {
+    display: none;
+}
+
+.concert-card {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-family: 'Orbitron', sans-serif; /* Ensure font applies */
+    font-size: smaller;
+    flex: 0 0 400px; /* Set each concert card width */
+    background: #121212; /* Dark theme background */
+    color: white; /* Light text */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    scroll-snap-align: start; /* Ensures smooth snap scrolling */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Soft glow effect */
+    cursor: pointer;
+    transition: transform 0.5s; /* Smooth flip transition */
+    position: relative;
+}
+
+.concert-title {
+    color: blueviolet;
+}
+
+.concert-card {
+    perspective: 1000px;
+    width: 300px;
+    height: 400px;
+    position: relative;
+}
+
+.concert-card .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.concert-card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.concert-card .card-front, .concert-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.concert-card .card-back {
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+/* Mobile View (400px width) */
+@media (max-width: 600px) {
+    .concert-card {
+        min-width: 250px; /* Smaller cards for small screens */
+        height: 350px;
+    }
+}
+
+/* Desktop View (1500px width) */
+@media (min-width: 1200px) {
+    .concert-card {
+        min-width: 400px; /* Larger cards for desktops */
+        height: 450px;
+    }
+}
