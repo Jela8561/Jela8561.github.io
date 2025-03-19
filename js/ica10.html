@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Elements</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            transition: background-color 2s;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            margin: 20px auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-family: fantasy;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="name">Hello!</h1>
+    <button id="colorButton">Change Box Color</button>
+    <button id="nameButton">Change Label</button>
+    <div class="box"></div>
+    
+    <script>
+        let box = document.querySelector(".box");
+        let nameText = document.querySelector(".name");
+
+        function randomColor() {
+            let r = Math.floor(Math.random() * 255) + 1;
+            let g = Math.floor(Math.random() * 255) + 1;
+            let b = Math.floor(Math.random() * 255) + 1;
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function changeBoxColor() {
+            box.style.backgroundColor = randomColor();
+        }
+
+        function updateName() {
+            let input = prompt("Enter a new name!");
+            if (input) {
+                nameText.textContent = input;
+            }
+        }
+
+        document.getElementById("colorButton").addEventListener("click", changeBoxColor);
+        document.getElementById("nameButton").addEventListener("click", updateName);
+    </script>
+</body>
+</html>
