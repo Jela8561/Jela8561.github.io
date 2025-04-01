@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Function start</title>
+    <style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 280px;
+        background: #eee;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        display: flex; /* Align image and text horizontally */
+        align-items: center;
+      }
+
+      .msgBox img {
+        width: 40px;  /* Adjust size */
+        height: 40px;
+        margin-right: 10px; /* Space between image and text */
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        color: #333;
+        flex: 1; /* Allow text to take remaining space */
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 1.1rem;
+        color: #aaa;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="showMessage">Display message box</button>
+
+    <script>
+      const btn = document.querySelector("#showMessage");
+      btn.addEventListener("click", () => displayMessage("Brian: Hi there, how are you today?", "chat"));
+
+      function displayMessage(msgText, msgType) {
+        const body = document.body;
+
+        // Create panel
+        const panel = document.createElement("div");
+        panel.setAttribute("class", "msgBox");
+        body.appendChild(panel);
+
+        // Create icon image
+        const img = document.createElement("img");
+
+        // Create message
+        const msg = document.createElement("p");
+        msg.textContent = msgText;
+
+        // Create close button
+        const closeBtn = document.createElement("button");
+        closeBtn.textContent = "x";
+
+        closeBtn.addEventListener("click", () => panel.remove());
+
+        // Set the image based on message type
+        if (msgType === "warning") {
+          img.src = "danger.png";
+          panel.style.backgroundColor = "red";
+        } else if (msgType === "chat") {
+          img.src = "waving.png";
+          panel.style.backgroundColor = "aqua";
+        }
+
+        // Append elements
+        panel.appendChild(img);
+        panel.appendChild(msg);
+        panel.appendChild(closeBtn);
+      }
+    </script>
+  </body>
+</html>

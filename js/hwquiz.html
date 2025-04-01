@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Function Library</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+      }
+      input {
+        padding: 8px;
+        font-size: 16px;
+      }
+      p {
+        font-size: 18px;
+        color: #333;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Function Library</h1>
+    <p>Enter a number to see its double, half, squared, cubed, and factorial values:</p>
+
+    <input type="text" placeholder="Enter a number" />
+    <p></p> <!-- This will display the results -->
+
+    <script>
+      // Get references to the input and paragraph elements
+      const input = document.querySelector("input");
+      const para = document.querySelector("p");
+
+      // Function to double the number
+      function double(num) {
+        return num * 2;
+      }
+
+      // Function to find half of the number
+      function half(num) {
+        return num / 2;
+      }
+
+      // Function to calculate the square of a number
+      function squared(num) {
+        return num * num;
+      }
+
+      // Function to calculate the cube of a number
+      function cubed(num) {
+        return num * num * num;
+      }
+
+      // Function to calculate the factorial of a number
+      function factorial(num) {
+        if (num < 0) return undefined; // Factorial not defined for negative numbers
+        if (num === 0) return 1; // 0! is 1
+
+        let x = num - 1;
+        while (x > 1) {
+          num *= x;
+          x--;
+        }
+        return num;
+      }
+
+      // Event listener to handle input changes
+      input.addEventListener("change", () => {
+        const num = parseFloat(input.value); // Convert input to a number
+
+        // Check if the input is a valid number
+        if (isNaN(num)) {
+          para.textContent = "You need to enter a number!";
+        } else {
+          para.textContent = `${num} doubled is ${double(num)}. `;
+          para.textContent += `${num} halved is ${half(num)}. `;
+          para.textContent += `${num} squared is ${squared(num)}. `;
+          para.textContent += `${num} cubed is ${cubed(num)}. `;
+          para.textContent += `${num} factorial is ${factorial(num)}. `;
+        }
+      });
+    </script>
+  </body>
+</html>
