@@ -1,0 +1,125 @@
+/* Apply a fun, modern font to the heading */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ff7a5a;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, rgba(255, 122, 90, 1) 0%, rgba(255, 182, 66, 1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: glowingText 3s ease-in-out infinite;
+  }
+  
+ 
+  /* General body styling */
+  body {
+    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    width: 640px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Full image container styling */
+  .full-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 480px;
+    overflow: hidden; /* Ensures image doesn't overflow */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Style the displayed image */
+  .displayed-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area */
+    object-position: center;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Overlay darkening effect */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button styles */
+  button {
+    border: 0;
+    background-color: rgba(150, 150, 150, 0.6);
+    color: #fff;
+    text-shadow: 1px 1px 1px white;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: rgba(150, 150, 150, 1);
+  }
+  
+  button.light {
+    background-color: rgba(0, 255, 0, 0.6);
+  }
+  
+  button.dark {
+    background-color: rgba(255, 0, 0, 0.6);
+  }
+  
+  /* Thumb-bar styling */
+  .thumb-bar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .thumb-bar img {
+    width: 18%;
+    margin: 2%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .thumb-bar img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    body {
+      width: 90%;
+    }
+  
+    .thumb-bar img {
+      width: 30%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  
