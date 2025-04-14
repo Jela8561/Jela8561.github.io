@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  .container {
+    background: rgba(9, 10, 15, 0.85);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  }
+  
+  header {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #8be9fd;
+    text-shadow: 0 0 5px #00ffff;
+  }
+  
+  .quote-text {
+    font-size: 22px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #f8f8f2;
+    text-shadow: 0 0 2px #fff;
+  }
+  
+  .button {
+    background-color: #50fa7b;
+    color: #0b0c10;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 12px #50fa7b;
+  }
+  
+  .button:hover {
+    background-color: #2de279;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #50fa7b;
+  }
+  
+  footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  footer a {
+    color: #ff79c6;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .change-bg {
+    background-color: #6a0dad;
+    margin-top: 10px;
+  }
+  
+  .change-bg:hover {
+    background-color: #8a2be2;
+  }
+  
+  
+  /* Starry Background Animation */
+  body::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+      100px 200px white,
+      200px 400px white,
+      300px 150px white,
+      400px 300px white,
+      500px 100px white,
+      600px 350px white,
+      700px 250px white,
+      800px 400px white,
+      900px 300px white,
+      1000px 200px white;
+    animation: twinkle 2s infinite alternate;
+    z-index: 0;
+  }
+  
+  @keyframes twinkle {
+    from {
+      opacity: 0.2;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

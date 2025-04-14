@@ -1,13 +1,12 @@
-// Step 1: Select the button and assign to a variable
+
 const newQuoteButton = document.querySelector("#js-new-quote");
 
-// Step 2: Add event listener to call getQuote on click
 newQuoteButton.addEventListener("click", getQuote);
 
-// Step 4: API endpoint
+// API endpoint
 const endpoint = "https://trivia.cyberwisp.com/getrandomchristmasquestion";
 
-// Step 3: Define getQuote and console log to check if it works
+//  Define getQuote 
 function getQuote() {
   console.log("Button clicked!");
 
