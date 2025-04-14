@@ -8,7 +8,7 @@ html, body {
   min-height: 100%;
   background-image: url('change.jpg'); /* Add the background image */
   background-size: cover; /* This ensures the image covers the whole screen */
-  background-position: center; /* This centers the image */
+  background-position: center; 
 }
 
 body {
