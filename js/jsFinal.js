@@ -1,32 +1,61 @@
+
+// Declare variables 
 const phoneDisplay = document.getElementById('phone-display');
 const inputButtons = document.getElementById('input-buttons');
 let phoneNumber = "";
 
+
+
+// Updating display func //
 function updateDisplay() {
+  // formatted variable
   let formatted = phoneNumber
+  //ensures 10 digit endpoint with blanks
     .padEnd(10, '_')
+    //characters
     .split('');
+    
+    //Updates html varible with the full formtted string 
   phoneDisplay.textContent = `${formatted[0]}${formatted[1]}${formatted[2]} - ${formatted[3]}${formatted[4]}${formatted[5]} - ${formatted[6]}${formatted[7]}${formatted[8]}${formatted[9]}`;
 }
 
+//buttons func// 
+
 function createButtons() {
+  //iterate through 9 
   for (let i = 0; i <= 9; i++) {
+
+    //new btn div 
     const btn = document.createElement('div');
     btn.className = 'digit-button';
     btn.textContent = i;
     btn.addEventListener('click', () => handleDigit(i));
+    // ^ setup and knows that i is what responds to change whitespace
+
     inputButtons.appendChild(btn);
+    //nooow we change the button
   }
 }
 
+
+
+//handleDigit func//
+
 function handleDigit(digit) {
+  //sets limit
   if (phoneNumber.length >= 10) {
     alert("You have already entered 10 digits!");
     return;
   }
 
+  //index is length of phoneNumber
   const digitIndex = phoneNumber.length; // 0 for first, 1 for second, etc.
 
+
+ //conditions to call errors for entering each entry in the index // 
+
+
+ // Each of these are string pop ups that are saying if cancel is hit then number goes to "" and display will clear ().
   // ---- FIRST DIGIT ----
   if (digitIndex === 0) {
     if (!confirm("Is the highlighted digit correct?")) {
@@ -36,6 +65,10 @@ function handleDigit(digit) {
       return;
     }
   } 
+
+
+// all of those that are >1 are within else if's 
+
 
   // ---- SECOND DIGIT ----
   else if (digitIndex === 1) {
@@ -95,8 +128,8 @@ function handleDigit(digit) {
       updateDisplay();
       return;
     }
-    if (!confirm("Will you be attending the MAYDAY protests on May 1st to mobilize against government corruption and the human rights abuses of minorities in the United States?")) {
-      alert("First they came for the Communists, And I did not speak out— Because I was not a Communist. Then they came for the Socialists, And I did not speak out— Because I was not a Socialist. Then they came for the trade unionists, And I did not speak out— Because I was not a trade unionist. Then they came for the Jews, And I did not speak out— Because I was not a Jew. Then they came for me— And there was no one left To speak out for me. Do it right this time! Starting over!");
+    if (!confirm("Have you hydrated today?")) {
+      alert("");
       phoneNumber = "";
       updateDisplay();
       return;
@@ -105,25 +138,25 @@ function handleDigit(digit) {
 
   // ---- FIFTH DIGIT ----
   else if (digitIndex === 4) {
-    if (!confirm("Good! Now some confirmation for the fifth digit, is this correct?.")) {
+    if (!confirm("Good! Now if you dont mind some confirmation for the fifth digit, is this correct?.")) {
       alert("Cancelled! Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
     }
-    if (!confirm("It always is helpful to be very very careful, is it right?")) {
+    if (!confirm("I will not go down swinging, it IS right?")) {
       alert("Cancelled! Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
     }
-    if (!confirm("Hmm I dont know I think you might have done it incorrectly, are you sure about this?")) {
-      alert("Cancelled! Starting over!");
+    if (!confirm("Devils advocate, you did it wrong. Thats the wrooong number. Restart. Now are you really sure about this?")) {
+      alert("It said devils advocate right there I wasn't serious... Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
     }
-    if (!confirm("Okay if you say so... DO YOU SAY SO?")) {
+    if (!confirm("Okay okay if you say so... DO YOU SAY SO?")) {
       alert("Cancelled! Starting over!");
       phoneNumber = "";
       updateDisplay();
@@ -146,7 +179,7 @@ function handleDigit(digit) {
       return;
     }
     if (!confirm("Make sure you didnt type 6 just because its the sixth digit, did you enter it correctly?")) {
-      alert("Cancelled! Starting over!");
+      alert("You goose, Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
@@ -163,13 +196,13 @@ function handleDigit(digit) {
       updateDisplay();
       return;
     }
-    if (!confirm("Statistically proven that this is where most people enter incorrectly, did you do it right")) {
-      alert("Cancelled! Starting over!");
+    if (!confirm("Fun fact: It is statistically proven that this is where most people enter incorrectly, did you do it right")) {
+      alert("Now you are a statistic. Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
     }
-    if (!confirm("There are no stastistics supporting the last claim, I made it up. Anyway we can move on to the next digit... right?")) {
+    if (!confirm("Another fun fact: There are no stastistics supporting the last claim at all, I made it up. Anyway we can move on to the next digit... right?")) {
       alert("Cancelled! Starting over!");
       phoneNumber = "";
       updateDisplay();
@@ -203,7 +236,7 @@ function handleDigit(digit) {
       updateDisplay();
       return;
     }
-    if (!confirm("Awesome. Movin- whats that? Oh he wants to double check, you entered the correct numbner right?")) {
+    if (!confirm("Awesome. Movin- whats up? Oh he wants to double check, you entered the correct number right?")) {
       alert("Cancelled! Starting over!");
       phoneNumber = "";
       updateDisplay();
@@ -216,7 +249,7 @@ function handleDigit(digit) {
       return;
     }
     if (!confirm("This is fantastic! Onto the next digit, unless you put in the wrong one in which case you should hit cancel and restart")) {
-      alert("Cancelled! Starting over!");
+      alert("Close one! Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
@@ -225,7 +258,7 @@ function handleDigit(digit) {
 
   // ---- EIGHTH DIGIT ----
   else if (digitIndex === 7) {
-    if (!confirm("The eighth digit! did you hit the right one?")) {
+    if (!confirm("The eighth digit! did you hit the right one again?")) {
       alert("Cancelled! Starting over!");
       phoneNumber = "";
       updateDisplay();
@@ -237,14 +270,14 @@ function handleDigit(digit) {
       updateDisplay();
       return;
     }
-    if (!confirm("This number must be correct, it must be. Is it? ")) {
+    if (!confirm("This number must be correct, it must be. It has to be. Is it? ")) {
       alert("Cancelled! Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
     }
-    if (!confirm("Have you hydrated today?")) {
-      alert("Cancelled! Starting over!");
+    if (!confirm("Quite off topic, but Will YOU speak out and mobilize against the Trump administrations human rights abuses of marginalized communities across the country? Its happening now dudes, either we're complacent or not.  ")) {
+      alert("Bummer, heres a poem inspired by last time people chose that option: First they came for the Communists, And I did not speak out— Because I was not a Communist. Then they came for the Socialists, And I did not speak out— Because I was not a Socialist. Then they came for the trade unionists, And I did not speak out— Because I was not a trade unionist. Then they came for the Jews, And I did not speak out— Because I was not a Jew. Then they came for me— And there was no one left To speak out for me. Do it right this time! Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
@@ -261,7 +294,7 @@ function handleDigit(digit) {
       updateDisplay();
       return;
     }
-    if (!confirm("This is starting to look like my ex's number... did you enter it right?")) {
+    if (!confirm("This is starting to look like my ex's number... did you enter it right??")) {
       alert("Cancelled! Starting over!");
       phoneNumber = "";
       updateDisplay();
@@ -396,7 +429,7 @@ function handleDigit(digit) {
       return;
     }
 
-    if (!confirm("Confirm? 🥹")) {
+    if (!confirm("Confirm?")) {
       alert("Now we have to restart! Starting over!");
       phoneNumber = "";
       updateDisplay();
@@ -406,10 +439,11 @@ function handleDigit(digit) {
 
   }
 
-  // After all confirmations passed
+  // After all confirmations passed, on the bottom!
   phoneNumber += digit;
   updateDisplay();
 }
 
+//creates buttons and runs update display
 createButtons();
 updateDisplay();
