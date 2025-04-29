@@ -95,8 +95,8 @@ function handleDigit(digit) {
       updateDisplay();
       return;
     }
-    if (!confirm("Will YOU be attending the MAYDAY protests on May 1st to mobilize against government corruption and the human rights abuses of minorities in both America and abroad?")) {
-      alert("First they came for the Communists, And I did not speak out— Because I was not a Communist. Then they came for the Socialists, And I did not speak out— Because I was not a Socialist. Then they came for the trade unionists, And I did not speak out— Because I was not a trade unionist. Then they came for the Jews, And I did not speak out— Because I was not a Jew. Then they came for me— And there was no one left To speak out for me. ! Starting over!");
+    if (!confirm("Will you be attending the MAYDAY protests on May 1st to mobilize against government corruption and the human rights abuses of minorities in the United States?")) {
+      alert("First they came for the Communists, And I did not speak out— Because I was not a Communist. Then they came for the Socialists, And I did not speak out— Because I was not a Socialist. Then they came for the trade unionists, And I did not speak out— Because I was not a trade unionist. Then they came for the Jews, And I did not speak out— Because I was not a Jew. Then they came for me— And there was no one left To speak out for me. Do it right this time! Starting over!");
       phoneNumber = "";
       updateDisplay();
       return;
